@@ -5,8 +5,9 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
 import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from './pages';
 import './App.css'
+import { useStateContext } from './contexts/ContextProvider';
 const App = () => {
-  const activeMenu = "true";
+  const { activeMenu, setActiveMenu } = useStateContext();
   return (
     <div>
       <BrowserRouter>
@@ -26,7 +27,7 @@ const App = () => {
             </div>
           ) : (
             <div className="w-0 dark:bg-secondary-dark-bg">
-              <Sidebar />
+              
             </div>
           )}
           <div className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full ${activeMenu ?
