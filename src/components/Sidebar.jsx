@@ -21,14 +21,14 @@ const Sidebar = () => {
           flex text-xl font-extrabold tracking-tight dart:text-white text-slate-900'>
             <SiShopware /> <span>Shoppy</span>
           </Link>
-          {/* <TooltipComponent content="Menu" position="BottomCenter">
+          <TooltipComponent content="Menu" position="BottomCenter">
             <button type="button" onClick={() => {
               setActiveMenu((prev) => !prev)
             }} className='text-xl p-4 hover:bg-light-gray
             mt-4'>
               <MdOutlineCancel />
             </button>
-          </TooltipComponent> */}
+          </TooltipComponent>
         </div>
         <div className="mt-10">
           {links.map((item) => (
