@@ -1,9 +1,8 @@
 import React from 'react'
-import { GridComponent, ColumnsDirective, ColumnDirective, Resize, Sort, ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit, Inject } from '@syncfusion/ej2-react-grids';
+import { GridComponent, ColumnsDirective, ColumnDirective, Resize, Sort, Page, Inject, Toolbar } from '@syncfusion/ej2-react-grids';
 
-import { ordersData, contextMenuItems, ordersGrid } from '../data/dummy';
+import { ordersData, ordersGrid } from '../data/dummy';
 import { Header } from '../components';
-import { textWrap } from '@syncfusion/ej2-react-charts';
 
 const Orders = () => {
   return (
@@ -14,6 +13,7 @@ const Orders = () => {
         dataSource={ordersData}
         allowPaging
         allowSorting
+        toolbar={['Search']}
       >
         <ColumnsDirective>
           {ordersGrid.map((item, index) => (
@@ -21,7 +21,7 @@ const Orders = () => {
           ))}
         </ColumnsDirective>
         <Inject 
-        services={[Resize, Sort, ContextMenu, Filter, Page, ExcelExport, Edit, PdfExport]} />
+        services={[Resize, Sort, Page, Toolbar]} />
       </GridComponent>
     </div>
   )

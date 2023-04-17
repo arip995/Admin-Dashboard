@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { SparklineComponent, Inject, SparklineTooltip } from '@syncfusion/ej2-react-charts'
 
 const SparkLine = ({ id, height, width, color, data, type, currentColor }) => {
@@ -10,14 +10,14 @@ const SparkLine = ({ id, height, width, color, data, type, currentColor }) => {
       lineWidth={1}
       valueType="Numeric"
       fill={color}
-      border={{color: currentColor, width: 2}}
+      border={{ color: currentColor, width: 2 }}
       type={type}
       tooltipSettings={{
         visible: true,
         // eslint-disable-next-line no-template-curly-in-string
         format: '${x} : data ${yval}',
         trackLineSettings: {
-          visible:true
+          visible: true
         }
       }}
       xName='x'
@@ -26,7 +26,7 @@ const SparkLine = ({ id, height, width, color, data, type, currentColor }) => {
     >
       <Inject services={[SparklineTooltip]} />
     </SparklineComponent>
-  )
+  );
 }
 
-export default SparkLine
+export default React.memo(SparkLine)
