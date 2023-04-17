@@ -27,7 +27,7 @@ const Pyramid = () => {
               yName="y"
               type="Pyramid"
               width="45%"
-              height="80%"
+              height="600px"
               neckWidth="15%"
               gapRatio={0.03}
               explode

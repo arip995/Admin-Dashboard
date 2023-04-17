@@ -13,6 +13,7 @@ const ColorMapping = () => {
       <ChartsHeader category="Color Mappping" title="USA CLIMATE - WEATHER BY MONTH" />
       <div className="w-full">
         <ChartComponent
+          height='600px'
           id="charts"
           primaryXAxis={ColorMappingPrimaryXAxis}
           primaryYAxis={ColorMappingPrimaryYAxis}

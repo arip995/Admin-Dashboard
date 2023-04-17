@@ -24,6 +24,7 @@ const Financial = () => {
       <ChartsHeader category="Financial" title="AAPLE Historical" />
       <div className="w-full">
         <ChartComponent
+          height='600px'
           id="charts"
           primaryXAxis={FinancialPrimaryXAxis}
           primaryYAxis={FinancialPrimaryYAxis}
