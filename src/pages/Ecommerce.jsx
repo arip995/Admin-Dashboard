@@ -8,9 +8,9 @@ import { useStateContext } from '../contexts/ContextProvider';
 const Ecommerce = () => {
   const { currentColor } = useStateContext();
   return (
-    <div className='mt-12'>
+    <div className='mt-10 m-2 md:m-10 p-2 md:p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl z-0'>
       <div className="flex flex-wrap lg:flex-nowrap justify-center">
-        <div className="bg-white dark:bg-secondary-dark-bg dark:text-gray-100 first-letter:h-44 rounded-xl w-full lg:w-80 p-6  bg-no-repeat bg-cover bg-center m-3">
+        {/* <div className="bg-white dark:bg-secondary-dark-bg dark:text-gray-100 first-letter:h-44 rounded-xl w-full lg:w-80 p-6  bg-no-repeat bg-cover bg-center m-3">
           <div className="flex justify-between items center">
             <div className="">
               <p className='font-bold text-gray-400'>Earnings</p>
@@ -26,10 +26,10 @@ const Ecommerce = () => {
               size="md"
             />
           </div>
-        </div>
+        </div> */}
         <div className="flex flex-wrap justify-center gap-2 items-center">
           {earningData.map((item) => (
-            <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56
+            <div className="bg-main-bg dark:text-gray-200 dark:bg-main-dark-bg md:w-56
             p-4 pt-9 rounded-2xl" key={item.title}>
               <button type='button' style={{ color: item.iconColor, backgroundColor: item.iconBg }}
                 className='text-2xl opacity-0.9 rounded-full p-4 hover:drop-shadow-xl'>{item.icon}
@@ -43,8 +43,8 @@ const Ecommerce = () => {
           ))}
         </div>
       </div>
-      <div className="flex gap-10 flex-wrap justify-center">
-        <div className="bg-white m-3 dark:text-gray-200 dark:bg-secondary-dark-bg p-4 rounded-2xl md:w-780">
+      <div className="flex gap-10 flex-wrap justify-center mt-6">
+        <div className="bg-main-bg m-3 dark:text-gray-200 dark:bg-main-dark-bg p-4 rounded-2xl md:w-780">
           <div className="flex justify-between">
             <p className="font-semibold text-xl">Revenue Updates</p>
             <div className="flex items-center gap-4">
@@ -59,7 +59,7 @@ const Ecommerce = () => {
             </div>
           </div>
           <div className="mt-10 flex gap-10 flex-wrap justify-center">
-            <div className="border-r-1 border-color m-4 pr-10">
+            <div className="border-r-1 dark:border-gray-600 border-color m-4 pr-10">
               <div className="">
                 <p>
                   <span className='text-3xl font-semibold'>$93,438</span>
