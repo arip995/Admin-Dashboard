@@ -45,3 +45,20 @@
 .e-input-group:not(.e-float-icon-left), .e-input-group.e-success:not(.e-float-icon-left), .e-input-group.e-warning:not(.e-float-icon-left), .e-input-group.e-error:not(.e-float-icon-left), .e-input-group.e-control-wrapper:not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-success:not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-warning:not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-error:not(.e-float-icon-left){
   border: none;
 }
+
+.e-tooltip-wrap .e-tip-content {
+  font-size: 15px;
+  padding: 8px;
+}
+
+/* .e-tooltip-wrap .e-arrow-tip-inner.e-tip-bottom {
+  color: #000;
+}
+
+.e-tooltip-wrap .e-arrow-tip-inner.e-tip-top {
+  color: #000;
+}
+
+.e-tooltip-wrap.e-popup {
+  background-color: #000;
+} */

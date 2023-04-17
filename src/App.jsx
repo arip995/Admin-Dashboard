@@ -7,16 +7,20 @@ import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Ka
 import './App.css'
 import { useStateContext } from './contexts/ContextProvider';
 const App = () => {
-  const { activeMenu, setActiveMenu } = useStateContext();
+  const { activeMenu, themeSettings, setThemeSettings, currentColor, currentMode } = useStateContext();
+  let TooltipAnimation = {
+    open: { effect: 'FlipYLeftIn', duration: 200, delay: 0 },
+};
   return (
-    <div>
+    <div className={currentMode === 'Dark' ? 'dark' : ''}>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
-            <TooltipComponent content="Settings" position="Top">
+            <TooltipComponent content="Settings" position="TopCenter" animation={TooltipAnimation}>
               <button type='button' className='text-3xl p-3 hover:drop-shadow-xl 
               hover:bg-light-gray text-white'
-                style={{ backgroundColor: 'blue', borderRadius: '50%' }}>
+                onClick={() => setThemeSettings(true)}
+                style={{ backgroundColor: currentColor, borderRadius: '50%' }}>
                 <FiSettings />
               </button>
             </TooltipComponent>
@@ -37,6 +41,7 @@ const App = () => {
             </div>
 
             <div className="">
+              {themeSettings && <ThemeSettings />}
               <Routes>
                 {/* Dashboard */}
                 <Route path="/" element={<Ecommerce />} />
