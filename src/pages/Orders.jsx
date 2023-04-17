@@ -14,9 +14,6 @@ const Orders = () => {
         dataSource={ordersData}
         allowPaging
         allowSorting
-        allowFiltering
-        allowExcelExport
-        allowPdfExport
       >
         <ColumnsDirective>
           {ordersGrid.map((item, index) => (
