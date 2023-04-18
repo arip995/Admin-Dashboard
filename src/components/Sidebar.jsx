@@ -27,7 +27,11 @@ const Sidebar = () => {
         <div className="flex justify-between items-center">
           <Link to='/' onClick={handleCloseSidebar} className='items-center gap-3 ml-4 mt-4 
           flex text-xl font-extrabold tracking-tight dart:text-white text-slate-900'>
-            <SiShopware /> <span>Shoppy</span>
+            <SiShopware
+              color={currentColor}
+            /> <span
+              className={`dark:text-white`}
+            >Shoppy</span>
           </Link>
           <TooltipComponent content="Menu" position="BottomCenter" animation={TooltipAnimation}>
             {screenSize <= 900 && <button type="button" onClick={() => {
