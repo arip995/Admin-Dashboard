@@ -24,13 +24,11 @@ export const ContextProvider = ({ children }) => {
         console.log(mode)
         setCurrentMode(mode);
         localStorage.setItem('themeMode', mode);
-        // setThemeSettings(false);
     }
 
     const setColor = (color) => {
         setCurrentColor(color);
         localStorage.setItem('themeColor', color);
-        // setThemeSettings(false);
     }
 
     return (

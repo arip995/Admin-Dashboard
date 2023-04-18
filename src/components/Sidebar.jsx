@@ -10,7 +10,10 @@ const Sidebar = () => {
   const { activeMenu, setActiveMenu, screenSize, currentColor } = useStateContext();
   const activeLink = `flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2`
   const normalLink = `flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md m-2 
-                      text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray`;
+                      text-gray-700 dark:text-gray-200 dark:hover:bg-[#20232a] hover:bg-light-gray`;
+  let TooltipAnimation = {
+    open: { effect: 'FlipYLeftIn', duration: 200, delay: 0 },
+  };
 
   const handleCloseSidebar = () => {
     if (activeMenu && screenSize <= 900) {
@@ -26,7 +29,7 @@ const Sidebar = () => {
           flex text-xl font-extrabold tracking-tight dart:text-white text-slate-900'>
             <SiShopware /> <span>Shoppy</span>
           </Link>
-          <TooltipComponent content="Menu" position="BottomCenter">
+          <TooltipComponent content="Menu" position="BottomCenter" animation={TooltipAnimation}>
             {screenSize <= 900 && <button type="button" onClick={() => {
               setActiveMenu((prev) => !prev)
             }} className='text-xl p-4 hover:bg-light-gray
@@ -44,7 +47,7 @@ const Sidebar = () => {
                   to={`/${link.name}`}
                   key={link.name}
                   onClick={handleCloseSidebar}
-                  style={({ isActive}) => ({
+                  style={({ isActive }) => ({
                     backgroundColor: isActive ? currentColor : ''
                   })}
                   className={({ isActive }) => isActive ? activeLink : normalLink}

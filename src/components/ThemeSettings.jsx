@@ -19,9 +19,14 @@ const ThemeSettings = () => {
       <div className="float-right h-screen dark:bg-secondary-dark-bg dark:text-gray-200 bg-white dark:[#484B52] w-400">
         <div className="flex justify-between items-center p-4 ml-4">
           <p className='font-semibold text-xl'>Settings</p>
+          <TooltipComponent
+                content='Close'
+                position='BottomCenter'
+              >
           <button type='button' onClick={() => { setThemeSettings(false) }}
             style={{ color: 'rgb(153, 171,180', borderRadius: '50%' }}
-            className='text-2xl p-3 hover:bg-light-gray'><MdOutlineCancel /></button>
+            className='text-2xl p-3 dark:hover:bg-[#20232a] hover:bg-light-gray'><MdOutlineCancel /></button>
+        </TooltipComponent>
         </div>
         <div className="flex-col border-t-1 border-color p-4 ml-4">
           <p className='font-semibold text-lg'>Theme Options</p>
