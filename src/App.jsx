@@ -7,16 +7,17 @@ import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Ka
 import './App.css'
 import { useStateContext } from './contexts/ContextProvider';
 import { Navigate } from 'react-router-dom';
+import Login from './pages/Login';
 
 const App = () => {
-  const { activeMenu, themeSettings, setThemeSettings, currentColor, currentMode } = useStateContext();
+  const { activeMenu, themeSettings, setThemeSettings, currentColor, currentMode, user } = useStateContext();
   let TooltipAnimation = {
     open: { effect: 'FlipYLeftIn', duration: 200, delay: 0 },
-};
+  };
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
       <BrowserRouter>
-        <div className="flex relative dark:bg-main-dark-bg ">
+        {user ? <div className="flex relative dark:bg-main-dark-bg ">
           <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
             <TooltipComponent content="Settings" position="TopCenter" animation={TooltipAnimation}>
               <button type='button' className='text-3xl p-3 hover:drop-shadow-xl 
@@ -45,10 +46,12 @@ const App = () => {
             <div className="">
               {themeSettings && <ThemeSettings />}
               <Routes>
-                <Route path="/" element={ <Navigate to="/eCommerce" /> } />
+                <Route path="/" element={<Navigate to="/eCommerce" />} />
+                <Route path="/login" element={<Navigate to="/eCommerce" />} />
                 {/* Dashboard */}
                 <Route path="/" element={<Ecommerce />} />
                 <Route path="/ecommerce" element={<Ecommerce />} />
+                {/* <Route path="/login" element={<Login />} /> */}
 
                 {/* Pages */}
                 <Route path="/orders" element={<Orders />} />
@@ -73,7 +76,13 @@ const App = () => {
               </Routes>
             </div>
           </div>
-        </div>
+        </div> : <div>
+          <Routes>
+            <Route path="/*" element={<Navigate to="/login" />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </div>}
+
       </BrowserRouter>
     </div>
   )

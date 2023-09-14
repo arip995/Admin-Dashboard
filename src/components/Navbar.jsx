@@ -11,7 +11,7 @@ import { Cart, Chat, Notification, UserProfile } from './';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
-  <TooltipComponent content={title} position='BottomCenter' style={{color: color}}>
+  <TooltipComponent content={title} position='BottomCenter' style={{ color: color }}>
     <button onClick={() => customFunc()} type="button" className='relative text-xl rounded-full p-3 dark:hover:bg-[#33373e] hover:bg-light-gray'>
       <span style={{ background: dotColor }}
         className="absolute inline-flex rounded-full h-2 w-2 righ-2 top-2" />
@@ -27,7 +27,8 @@ const Navbar = () => {
     currentColor,
     handleClick,
     screenSize,
-    setScreenSize
+    setScreenSize,
+    user
   } = useStateContext();
 
   useEffect(() => {
@@ -59,10 +60,10 @@ const Navbar = () => {
           position="BottomCenter">
           <div className="flex items-center cursor-pointer p-1 gap-2 hover:bg-light-gray dark:hover:bg-[#33373e] rounded-lg"
             onClick={() => handleClick('userProfile')}>
-            <img className='rounded-full w-8 h-8' src={avatar} alt='Pandas are cute'/>
+            <img className='rounded-full w-8 h-8' src={avatar} alt='Pandas are cute' />
             <p>
               <span className='text-gray-400 text-14'>Hi, </span> {' '}
-              <span className='text-gray-400 text-14 font-bold ml-1'>Panda</span>
+              <span className='text-gray-400 text-14 font-bold ml-1'>{user?.email}</span>
             </p>
             <MdKeyboardArrowDown className='text-gray-400 text-14' />
           </div>
